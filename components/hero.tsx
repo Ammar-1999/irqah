@@ -30,6 +30,8 @@ const Hero = () => {
 
   const activeImageIndex = wrap(0, IMAGES.length, imageCount);
 
+  console.log(activeImageIndex);
+
   const swipeToImage = useCallback(
     (swipeDirection) => {
       setImageCount([imageCount + swipeDirection, swipeDirection]);
