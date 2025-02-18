@@ -1,17 +1,11 @@
-import localFont from "next/font/local";
-import Hero from "@/components/hero";
+import Hero from "@/components/hero-section";
 import { useEffect } from "react";
 import Lenis from "lenis";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import AnalysisSection from "@/components/analysis-section";
+import About from "@/components/about-section";
+import Service from "@/components/service-section";
+import GreenSection from "@/components/green-section";
+import MediaSection from "@/components/media-section";
 
 export default function Home() {
   useEffect(() => {
@@ -25,10 +19,13 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)]`}
-    >
+    <>
       <Hero />
-    </div>
+      <AnalysisSection />
+      <About />
+      <Service />
+      <GreenSection />
+      <MediaSection />
+    </>
   );
 }

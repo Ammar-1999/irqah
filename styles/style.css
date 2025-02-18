@@ -1,0 +1,52 @@
+.hero-linear-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(74, 58, 50, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  filter: blur(2px);
+}
+
+.hero-gradient {
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,0.3106034650188201) 0%, rgba(0,0,0,0.5402953417695203) 78%, rgba(0,0,0,0.5963177507331057) 100%);
+}
+
+.hero-gradient-line-2 {
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+
+.hero-dots {
+  margin: 0.5rem 0;
+  position: relative;
+  width: .5rem;
+  height: .5rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.hero-dots.active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  animation: scaleIn 0.3s ease forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
