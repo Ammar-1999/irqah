@@ -107,7 +107,7 @@ export default function Service() {
             src="/images/hands.gif"
             alt="hands"
             loading="lazy"
-            className="object-cover w-7 h-7"
+            className="object-cover w-7 h-7 hidden"
           />
           <p className="font-medium text-primary text-p">نفخر بخدماتنا التى نقدمها للمجتمع . فبكم نحيا ونتطور.</p>
         </div>

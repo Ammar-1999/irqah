@@ -190,7 +190,7 @@ const HeroContent = memo(() => {
   return (
     <div className="flex-1 flex flex-col justify-center items-center w-fit max-w-[70%] mx-auto mt-[calc(var(--analysis-cross-height)+1rem)]">
       <motion.div
-        custom={0.2}
+        custom={0.1}
         className="relative py-1 px-2"
         variants={heroContentVariants}
         animate="animate"
@@ -200,7 +200,7 @@ const HeroContent = memo(() => {
         <p className="relative z-10 text-p">نرصد حاجة ..نحفظ كرامة الانسان</p>
       </motion.div>
       <motion.h1
-        custom={0.4}
+        custom={0.3}
         className="h-h1 font-bold"
         variants={heroContentVariants}
         animate="animate"
@@ -210,7 +210,7 @@ const HeroContent = memo(() => {
       </motion.h1>
       <div className="hero-gradient-line-2 w-full h-1 rounded-xl" />
       <motion.p
-        custom={0.6}
+        custom={0.5}
         className="text-sm md:text-p lg:text-xl my-4 text-center"
         variants={heroContentVariants}
         animate="animate"

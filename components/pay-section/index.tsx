@@ -58,8 +58,14 @@ export default memo(function PaySection() {
   return (
     <section
       ref={ref}
-      className="bg-primary w-full min-h-fit h-[50rem] md:h-[45rem] mb-between-sections relative overflow-hidden bg-[url('/images/pay-bg.webp')] bg-cover bg-center"
+      className="bg-primary w-full min-h-fit h-[50rem] md:h-[45rem] mb-between-sections relative overflow-hidden"
     >
+      <img
+        src="/images/pay-bg.webp"
+        alt="pay-bg"
+        loading="lazy"
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      />
       <div className="absolute top-0 left-0 w-full h-full bg-black/20" />
       <div className="container relative flex flex-col md:flex-row py-5 h-full">
         <div className="flex flex-col md:flex-[.8] md:h-full justify-between gap-10 mb-4">

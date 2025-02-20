@@ -14,7 +14,12 @@ import { SharePayment } from "../ui/share-payment";
 const FooterSection = memo(() => {
   return (
     <footer className="relative bg-[#071207] pb-8">
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/footer-bg.webp')] bg-cover bg-center opacity-30"></div>
+      <img
+        src="/images/footer-bg.webp"
+        alt="footer-bg"
+        loading="lazy"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+      />
       <div className="relative container pb-4 pt-10 h-full text-p">
         <div className="grid grid-cols-1 gap-y-9 sm:gap-y-2 sm:grid-cols-2 tab:grid-cols-12 gap-2 lg:gap-5">
           <div className="flex h-full tab:col-span-2">
