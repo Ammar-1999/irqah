@@ -72,16 +72,16 @@ const ServiceCard = ({
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: delay }}
-      className={`${backgroundColor} py-9 px-6 shadow-sm hover:shadow-md transition-colors duration-300 h-full hover:bg-card rounded-xl`}
+      className={`${backgroundColor} py-9 px-6 shadow-sm hover:shadow-md transition-colors duration-300 h-full hover:bg-card rounded-1xl`}
     >
-      <div className="flex flex-col items-start text-right gap-4">
+      <div className="flex flex-col items-start text-right gap-4 font-semibold">
         <div
           className={`rounded-full inline-flex p-1 border-[6px] bg-card ${borderColor} ${iconColor}`}
         >
           <IconCheck />
         </div>
-        <h3 className="text-2xl font-semibold text-black">{title}</h3>
-        <p className="text-lightGray font-semibold text-lg leading-relaxed">{description}</p>
+        <h3 className="text-subtitle text-black">{title}</h3>
+        <p className="text-lightGray text-p leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );
@@ -89,11 +89,11 @@ const ServiceCard = ({
 export default function Service() {
   return (
     <section className="container text-card-foreground mb-between-sections">
-      <div className="flex justify-between items-center mb-4">
-        <div className="relative w-fit py-3 mb-1">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div className="relative w-fit py-3">
           <LineAnimation />
           <BlurFade inViewMargin="-50px" inView>
-            <h3 className="text-3xl font-bold text-secondary ">خدماتنا</h3>
+            <h3 className="text-section-title font-semibold text-secondary ">خدماتنا</h3>
           </BlurFade>
         </div>
         <div
@@ -105,18 +105,18 @@ export default function Service() {
         >
           <img
             src="/images/hands.gif"
-            alt="  "
+            alt="hands"
             loading="lazy"
             className="object-cover w-7 h-7"
           />
-          <p className="font-medium text-primary text-xl">نفخر بخدماتنا التى نقدمها للمجتمع . فبكم نحيا ونتطور.</p>
+          <p className="font-medium text-primary text-p">نفخر بخدماتنا التى نقدمها للمجتمع . فبكم نحيا ونتطور.</p>
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {services.map((service, index) => (
           <div
             key={index}
-            className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-w-[280px]"
+            className="w-full md:w-[calc(50%-.75rem)] lg:w-[calc(33.333%-1rem)] min-w-[280px]"
           >
             <ServiceCard {...service} delay={index * 0.2} />
           </div>

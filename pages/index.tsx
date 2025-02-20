@@ -6,6 +6,10 @@ import About from "@/components/about-section";
 import Service from "@/components/service-section";
 import GreenSection from "@/components/green-section";
 import MediaSection from "@/components/media-section";
+import PaySection from "@/components/pay-section";
+import ProjectSection from "@/components/project-section";
+import PartnersSection from "@/components/partners-section";
+import FooterSection from "@/components/footer-section";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +30,10 @@ export default function Home() {
       <Service />
       <GreenSection />
       <MediaSection />
+      <PaySection />
+      <ProjectSection />
+      <PartnersSection />
+      <FooterSection />
     </>
   );
 }

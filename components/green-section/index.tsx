@@ -24,30 +24,12 @@ export default memo(function GreenSection() {
         custom={isInView}
         animate={{ opacity: isInView ? 1 : 0.5, y: isInView ? 0 : -300 }}
         transition={transition}
-        src="/images/dash3.png"
+        src="/images/dash.png"
         alt="dash"
-        className="absolute top-0 left-0 h-[90%] object-cover w-full"
+        className="absolute opacity-50 top-0 left-0 h-[90%] object-cover w-full"
         loading="lazy"
       />
-      <motion.img
-        custom={isInView}
-        animate={{ opacity: isInView ? 1 : 0.5, y: isInView ? 0 : -300 }}
-        transition={transition}
-        src="/images/dash3.png"
-        alt="dash"
-        className="absolute top-0 left-0 h-[90%] object-cover w-full"
-        loading="lazy"
-      />
-      <motion.img
-        custom={isInView}
-        animate={{ opacity: isInView ? 1 : 0.5, y: isInView ? 0 : -300 }}
-        transition={transition}
-        src="/images/dash3.png"
-        alt="dash"
-        className="absolute top-0 left-0 h-[90%] object-cover w-full"
-        loading="lazy"
-      />
-      <div className="container flex flex-col justify-center h-full items-center gap-6 relative">
+      <div className="container flex flex-col justify-center h-full items-center gap-1 md:gap-6 relative">
         <motion.img
           variants={logoVariants}
           initial="initial"
@@ -55,7 +37,7 @@ export default memo(function GreenSection() {
           viewport={dashViewport}
           src="/images/green-section.png"
           alt="logo"
-          className="w-32 h-32 object-contain z-[1]"
+          className="w-24 md:w-32 aspect-square object-contain z-[1]"
           loading="lazy"
         />
         <div className="relative z-[1]">
@@ -64,7 +46,7 @@ export default memo(function GreenSection() {
             initial="initial"
             whileInView="animate"
             viewport={dashViewport}
-            className="text-xl md:text-3xl font-semibold text-foreground py-4"
+            className="text-section-title font-semibold text-foreground py-4"
           >
             نرصد حاجة ..نحفظ كرامة الانسان
           </motion.h3>

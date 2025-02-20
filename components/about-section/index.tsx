@@ -8,12 +8,12 @@ import { LineAnimation } from "../ui/line-animation";
 const viewport = { once: true, amount: 0.5 };
 const About = memo(() => {
   return (
-    <section className="flex gap-8 items-center container text-card-foreground mb-between-sections">
+    <section className="flex flex-col md:flex-row gap-8 items-center container text-card-foreground mb-between-sections">
       <div className="flex-1">
         <div className="relative w-fit py-3 mb-1">
           <LineAnimation />
           <BlurFade inViewMargin="-50px" inView>
-            <h3 className="text-3xl font-bold text-secondary ">عن الجمعية</h3>
+            <h3 className="text-section-title font-semibold text-secondary ">عن الجمعية</h3>
           </BlurFade>
         </div>
         <motion.p
@@ -21,7 +21,7 @@ const About = memo(() => {
           initial="initial"
           whileInView="animate"
           viewport={viewport}
-          className="text-lg"
+          className="text-p"
         >
           جمعية عرقة الخيرية باب من الخير والعطاء والبذل والإحسان لكل محسن
           ومتبرع وباذل ودال على الخير ،والموفق من وفقه الله لفعل الخير وبذله
@@ -33,7 +33,7 @@ const About = memo(() => {
           initial="initial"
           whileInView="animate"
           viewport={viewport}
-          className="mt-3 text-lg"
+          className="mt-3 text-p"
         >
           تأسست الجمعية بتاريخ 1430/05/10هـ و سجلت بوزارة الموارد البشرية
           والتنمية الاجتماعية برقم (489)
@@ -46,8 +46,8 @@ const About = memo(() => {
           viewport={viewport}
           className="mr-auto w-fit mt-8"
         >
-          <Link variant="moreSecondary" href="/#" className="flex text-xl font-bold">
-            <span>المزيد</span>
+          <Link variant="moreSecondary" href="/#" className="flex items-center justify-center">
+            <p className="text-CTA font-semibold" >المزيد</p>
             <MoreArrow />
           </Link>
         </motion.div>
@@ -60,8 +60,9 @@ const About = memo(() => {
           whileInView={{ y: 0, x: 0 }}
           viewport={viewport}
           transition={spring}
+          loading="lazy"
           src="/images/about.webp"
-          alt="  "
+          alt="عن الجمعية"
           className="w-[90%] relative aspect-square object-cover rounded-2xl"
         />
       </div>

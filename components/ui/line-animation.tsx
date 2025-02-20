@@ -5,11 +5,12 @@ export const LineAnimation = memo(() => {
     <motion.div
       initial={{ width: 0 }}
       whileInView={{ width: "4rem" }}
-      viewport={{ margin: "-50px", once: true }}
+      viewport={{ amount: 1, once: true }}
       transition={{
         type: "spring",
         stiffness: 100,
         damping: 15,
+        delay: 0.5,
       }}
       className="absolute top-0 right-0 h-1 bg-secondary rounded-md"
     />

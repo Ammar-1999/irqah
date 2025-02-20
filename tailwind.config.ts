@@ -52,6 +52,7 @@ const config: Config = {
         nav: "hsl(var(--nav))",
         lightGray: "hsl(var(--light-gray))",
         notActive: "hsl(var(--not-active))",
+        hoverPaymentCard: "hsl(var(--hover-payment-card))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -97,6 +98,17 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+      },
+      fontSize: {
+        "section-title": "var(--section-title-font-size)",
+        subtitle: "var(--subtitle-font-size)",
+        CTA: "var(--CTA-font-size)",
+        p: "var(--p-font-size)",
+        small: "var(--small-font-size)",
+      },
+      screens: {
+        xs: "500px",
+        tab: "900px",
       },
     },
   },

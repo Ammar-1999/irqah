@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 
-import { Header1 } from "../ui/header";
+import { Header1 } from "./header";
 import PhoneIcon from "../icons/phone";
 import MailIcon from "../icons/email";
 import { Arrow } from "../icons/arrow";
@@ -65,11 +65,16 @@ const Hero = () => {
           initial="initial"
           transition={overlayTransition}
         />
-        <div className="container h-screen px-0 pt-3 pb-[calc(var(--analysis-cross-height)+1rem)]">
+        <div className="container h-screen pt-3 pb-[calc(var(--analysis-cross-height)+1rem)]">
           <div className="flex flex-col justify-between h-full w-full text-foreground z-[1] relative">
             <HeroContact />
             <HeroContent />
-            <motion.div variants={heroImageControllerVariants} initial="initial" animate="animate" className="absolute bottom-0 right-0 h-3/5 flex flex-col justify-between">
+            <motion.div
+              variants={heroImageControllerVariants}
+              initial="initial"
+              animate="animate"
+              className="absolute bottom-0 right-0 h-3/5 flex flex-col justify-between"
+            >
               <Dots activeImageIndex={activeImageIndex} />
               <PrevNextButtons prev={prev} next={next} />
             </motion.div>
@@ -161,6 +166,7 @@ const PrevNextButtons = memo(
     return (
       <div className="flex flex-col gap-4 justify-center items-center">
         <Button
+          aria-label="السابق"
           variant="none"
           onClick={prev}
           className="w-12 h-12 cursor-pointer bg-black/40 hover:bg-black/60 active:bg-black/60 rounded-full flex justify-center items-center"
@@ -168,6 +174,7 @@ const PrevNextButtons = memo(
           <Arrow direction="right" />
         </Button>
         <Button
+          aria-label="التالي"
           variant="none"
           onClick={next}
           className="w-12 h-12 cursor-pointer bg-black/40 hover:bg-black/60 active:bg-black/60 rounded-full flex justify-center items-center"
@@ -181,7 +188,7 @@ const PrevNextButtons = memo(
 PrevNextButtons.displayName = "PrevNextButtons";
 const HeroContent = memo(() => {
   return (
-    <div className="flex-1 flex flex-col justify-center items-center w-full mt-[calc(var(--analysis-cross-height)+1rem)]">
+    <div className="flex-1 flex flex-col justify-center items-center w-fit max-w-[70%] mx-auto mt-[calc(var(--analysis-cross-height)+1rem)]">
       <motion.div
         custom={0.2}
         className="relative py-1 px-2"
@@ -190,26 +197,21 @@ const HeroContent = memo(() => {
         initial="initial"
       >
         <div className="hero-linear-gradient absolute inset-0 rounded-s-lg" />
-        <p className="relative z-10 text-xl">نرصد حاجة ..نحفظ كرامة الانسان</p>
+        <p className="relative z-10 text-p">نرصد حاجة ..نحفظ كرامة الانسان</p>
       </motion.div>
       <motion.h1
         custom={0.4}
-        className="text-6xl font-bold my-4"
+        className="h-h1 font-bold"
         variants={heroContentVariants}
         animate="animate"
         initial="initial"
       >
         جمعية عرقة الخيرية
       </motion.h1>
-      <motion.div
-        custom={1}
-        className="hero-gradient-line-2 w-[30rem] h-1 rounded-xl"
-        animate="animate"
-        initial="initial"
-      />
+      <div className="hero-gradient-line-2 w-full h-1 rounded-xl" />
       <motion.p
         custom={0.6}
-        className="text-xl my-4"
+        className="text-sm md:text-p lg:text-xl my-4 text-center"
         variants={heroContentVariants}
         animate="animate"
         initial="initial"
@@ -224,7 +226,7 @@ HeroContent.displayName = "HeroContent";
 const HeroContact = memo(() => {
   return (
     <motion.div
-      className="flex justify-between items-center w-full font-light text-sm"
+      className="flex justify-between items-center w-full font-light text-small"
       variants={heroContactVariants}
       animate="animate"
       initial="initial"
@@ -244,16 +246,25 @@ HeroContact.displayName = "HeroContact";
 
 const ActionButtons = memo(() => {
   return (
-    <motion.div variants={heroActionVariants} initial="initial" animate="animate" className="absolute bottom-0 left-0 flex flex-col justify-between z-10 items-end gap-3">
+    <motion.div
+      variants={heroActionVariants}
+      initial="initial"
+      animate="animate"
+      className="absolute bottom-0 left-0 flex flex-col justify-between z-10 items-end gap-3"
+    >
       <Button
         aria-label="تبرع الان"
         variant="secondary"
-        className="font-semibold text-lg rounded-1xl px-4 py-8 bg-secondary/60"
+        className="font-semibold text-CTA rounded-1xl px-4 h-12 md:h-16 bg-secondary/60"
       >
         <span>تبرع الان</span>
         <DonateIcon />
       </Button>
-      <Button variant="secondary" className="h-11 w-11 rounded-full">
+      <Button
+        aria-label="تواصل معنا عبر الواتساب"
+        variant="secondary"
+        className="h-11 w-11 rounded-full"
+      >
         <WhatsappIcon />
       </Button>
     </motion.div>
