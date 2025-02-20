@@ -88,8 +88,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>عرقة</title>
 
         <link rel="preload" as="image" href="/images/hero/1.webp" />
-        <link rel="preload" as="image" href="/images/hero/2.webp" />
-        <link rel="preload" as="image" href="/images/hero/3.webp" />
       </Head>
       <style jsx global>{`
         html {
