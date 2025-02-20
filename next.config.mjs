@@ -53,6 +53,10 @@ const headers = isDev
           key: "Strict-Transport-Security",
           value: `max-age=63072000; includeSubDomains; preload`,
         },
+        {
+          key: "Access-Control-Allow-Origin",
+          value: process.env.NEXT_PUBLIC_URL,
+        },
       ],
     },
     {

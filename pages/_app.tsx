@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta httpEquiv="Cross-Origin-Opener-Policy" content="same-origin" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin" />
-        <meta property="og:url" content="https://irqah.pages.dev" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ar_KSA" />
         <meta property="og:title" content="عرقة" />
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta
           property="og:image"
-          content={"https://irqah.pages.dev" + "/og.png"}
+          content={process.env.NEXT_PUBLIC_URL + "/og.png"}
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
